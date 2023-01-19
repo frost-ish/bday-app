@@ -69,10 +69,12 @@ class _MyAppState extends State<MyApp> {
                 duration: const Duration(milliseconds: 700),
                 // The green box must be a child of the AnimatedOpacity widget.
                 child: ElevatedButton(
-                  onPressed: () {
-                    controller!.play();
-                    changeVisibility();
-                  },
+                  onPressed: toShowButton
+                      ? () {
+                          controller!.play();
+                          changeVisibility();
+                        }
+                      : null,
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all(const CircleBorder()),
                     backgroundColor:
@@ -224,14 +226,16 @@ class _MyAppState extends State<MyApp> {
                   duration: const Duration(milliseconds: 700),
                   // The green box must be a child of the AnimatedOpacity widget.
                   child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) {
-                          return SecondPage();
-                        }),
-                      );
-                    },
+                    onPressed: toShowButton2
+                        ? () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) {
+                                return SecondPage();
+                              }),
+                            );
+                          }
+                        : null,
                     style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all(Colors.pinkAccent),
