@@ -12,3 +12,5 @@
 - A blast of confetti
 - An image slider to bring the moments back
 - Aur daalne hain to fork karlo ;D
+
+Made with <3 by Ishita
